@@ -1,0 +1,73 @@
+@import url("reset.css");
+:root {
+    /* Primary Color (Deep Blue) */
+    --primary-color: #004d99; /* Background for header/navigation */
+  
+    /* Accent Color (Vibrant Orange) */
+    --accent-color: #ff6600; /* Buttons, highlights */
+  
+    /* Neutral Colors */
+    --light-gray: #f5f5f5; /* Background for content areas */
+    --dark-gray: #333333; /* Text color for body paragraphs */
+    --white: #ffffff; /* Main background color */
+  
+    /* Additional Color (Light Green) */
+    --additional-color: #66cc66; /* Accent for sustainability */
+  
+    /* Additional Colors */
+    --light-blue: #add8e6; /* Background for sections */
+    --dark-blue: #00008b; /* Text color for headings */
+    --dark-green: #006400; /* Text color for footer or secondary headings */
+  }
+  /* Reset some default styles for the body and header */
+body, header, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Define global styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header/Navigation styles */
+  .navbar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    margin-right: auto;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+  }
+  
+  .nav-links ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .nav-links ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-links ul li a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  .nav-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
