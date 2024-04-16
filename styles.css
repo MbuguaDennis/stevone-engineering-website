@@ -1,84 +1,156 @@
 @import url("reset.css");
+
+/* import font family */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Primary Color (Blue) */
 :root {
-    /* Primary Color (Deep Blue) */
-    --primary-color: #004d99; /* Background for header/navigation */
-  
-    /* Accent Color (Vibrant Orange) */
-    --accent-color: #ff6600; /* Buttons, highlights */
-  
-    /* Neutral Colors */
-    --light-gray: #f5f5f5; /* Background for content areas */
-    --dark-gray: #333333; /* Text color for body paragraphs */
-    --white: #ffffff; /* Main background color */
-  
-    /* Additional Color (Light Green) */
-    --additional-color: #66cc66; /* Accent for sustainability */
-  
-    /* Additional Colors */
-    --light-blue: #add8e6; /* Background for sections */
-    --dark-blue: #00008b; /* Text color for headings */
-    --dark-green: #006400; /* Text color for footer or secondary headings */
+  --primary-color: #3F51B5; /* Background, Headers/Headings */
+  --primary-hover: #303F9F; /* Hover Effects */
+
+/* Secondary Colors */
+  /* Light Blue */
+  --light-blue: #5C6BC0; /* Background */
+  --light-blue-hover: #7986CB; /* Hover Effects */
+
+  /* Yellow */
+  --yellow: #FFEB3B; /* Accents, Call-to-Action */
+  --yellow-alert: #FBC02D; /* Alerts/Warnings */
+  --white-color:#fff;
+
+  /* Red */
+  --red: #F44336; /* Error Messages, Danger/Warning */
+  --red-hover: #D32F2F; /* Hover Effects */
+
+
+  --font-family-lato: "Lato", sans-serif;
+  --font-family-mono: "Roboto Mono", monospace;
+  --font-family-poppins: "Poppins", sans-serif;
+}
+/* Header styling */
+.header {
+  background-color: #3F51B5; /* Primary color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+/* Contacts styling */
+.contacts {
+  display: flex;
+  align-items: center;
+}
+
+.phone-number, .email-address {
+  margin-right: 20px;
+}
+
+/* Phone number icon */
+.fa-solid.fa-phone::before {
+  content: "\f095"; /* Unicode for phone icon */
+  margin-right: 5px;
+}
+
+/* Email icon */
+.fa-solid.fa-envelope::before {
+  content: "\f0e0"; /* Unicode for envelope icon */
+  margin-right: 5px;
+}
+
+/* Navigation styling */
+nav{
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-family: var(--font-family-mono);
+
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
   }
-  /* Reset some default styles for the body and header */
-body, header, ul {
-    margin: 0;
-    padding: 0;
+  nav ul li a{
+    font-size: 16px;
   }
-  
-  /* Define global styles */
-  body {
-    font-family: Arial, sans-serif;
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Header/Navigation styles */
-  .navbar {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 20px 0;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    margin-right: auto;
-  }
-  
-  .nav-links ul {
-    list-style: none;
-  }
-  
-  .nav-links ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .nav-links ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .nav-links ul li a {
-    color: var(--white);
-    text-decoration: none;
-  }
-  
-  .nav-links ul li a:hover {
-    text-decoration: underline;
-  }
-  .main{
+  ul{
+    position: fixed;
     width: 100%;
-    height: 400px;
-    background-color: #0a0a23;
-    color: gold;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
     text-align: center;
-    padding-top: 20px;
+    transition: all .5s;
   }
-  .main h2,h3{
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
     font-size: 20px;
   }
-  
-  
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
